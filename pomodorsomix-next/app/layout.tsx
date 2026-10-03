@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 
 const DESCRIPTION =
   "Pomodorso: A Pomodoro Timer, a Breathing App, and a Word Processor All In One!";
@@ -35,7 +36,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body style={{ margin: 0 }}>{children}</body>
+      <body style={{ margin: 0 }}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
